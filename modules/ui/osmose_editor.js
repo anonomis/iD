@@ -1,13 +1,9 @@
-import { select as d3_select } from 'd3-selection';
-
 import { t } from '../util/locale';
 import { services } from '../services';
 import { modeBrowse } from '../modes/browse';
 import { modeSelectError } from '../modes/select_error';
 
 import { uiOsmoseDetails } from './osmose_details';
-
-import { utilNoAuto } from '../util';
 
 
 export function uiOsmoseEditor(context) {
@@ -88,7 +84,7 @@ export function uiOsmoseEditor(context) {
             .merge(buttonEnter);
 
         buttonSection.select('.close-button')
-            .text(function(d) {
+            .text(function() {
                 return t('QA.keepRight.close');
             })
             .on('click.close', function(d) {
@@ -101,7 +97,7 @@ export function uiOsmoseEditor(context) {
             });
 
         buttonSection.select('.ignore-button')
-            .text(function(d) {
+            .text(function() {
                 return t('QA.keepRight.ignore');
             })
             .on('click.ignore', function(d) {
